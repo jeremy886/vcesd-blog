@@ -1,0 +1,52 @@
+---
+title: "Module 3 Practice Task"
+description: "A text-based Module 3 task"
+author: "Your Name"
+date: 2025-05-15
+categories: [module3, programming]
+draft: false
+---
+
+# Module 3
+
+- Functions
+- Algorithms
+
+## Learning Goals
+
+- Work effectively with a partner using Pair Programming
+- Follow steps to develop a module (mini-project)
+- Learn key skills and take notes for the module 3 test
+
+## Pair Programming Steps
+
+### Step 0: Set up working protocol
+
+- Who is the driver for how long
+- How to resolve conflicts
+
+### Step 1: Create a file
+
+- Use given data and create a travel.txt file for your module
+- Use file operations (open, read/write, close) to load the data into Python
+- Create the function `show_loaded_data()` to display the loaded data
+
+### Step 2: Place the travel data into a 2D data structure
+
+- Consider 4 data structure options (list of list, list of dictionary, dictionary of dictionary, dictionary of list) and decide
+- Process a row into 3 items and place them in the data structure
+- Use a loop to display the data in the following order "Desination", "Transport Methods", "ID"
+- Add a separator like "-" between items: `Werribee Open Range Zoo - Car - 20250105`
+- Create the function `show_data()` to display the items of data
+- Use a parameter `separator` to accept different separators from users
+
+
+### Step 3: Sort and Search
+
+
+
+### Step N: Test
+
+- use `assert` to test your module
+- use `doctest` to test your module
+- use custom functions to test your module
