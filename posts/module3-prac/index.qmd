@@ -25,6 +25,52 @@ draft: false
 - Decide who will be the driver and for how long
 - Agree on how to resolve any conflicts
 
+Travel raw data:
+
+```
+Plan ID: 20250105, Destination: Werribee Open Range Zoo, Transport Method: Car
+Plan ID: 20250118, Destination: Geelong Waterfront, Transport Method: Car
+Plan ID: 20250202, Destination: Torquay Surf Beach, Transport Method: Car
+Plan ID: 20250216, Destination: Great Ocean Road Memorial Arch, Transport Method: Car
+Plan ID: 20250301, Destination: Lorne Pier, Transport Method: Car
+Plan ID: 20250315, Destination: Apollo Bay Harbour, Transport Method: Car
+Plan ID: 20250406, Destination: Twelve Apostles, Transport Method: Car
+Plan ID: 20250420, Destination: Port Campbell National Park, Transport Method: Car
+Plan ID: 20250504, Destination: Warrnambool Botanic Gardens, Transport Method: Car
+Plan ID: 20250518, Destination: Tower Hill Wildlife Reserve, Transport Method: Car
+Plan ID: 20250601, Destination: Port Fairy Wharf, Transport Method: Car
+Plan ID: 20250615, Destination: Hamilton Gallery, Transport Method: Bus
+Plan ID: 20250706, Destination: Hamilton Botanic Gardens, Transport Method: Car
+Plan ID: 20250720, Destination: Hamilton Car Museum, Transport Method: Car
+Plan ID: 20250803, Destination: Mount Gambier Blue Lake, Transport Method: Bus
+Plan ID: 20250817, Destination: Umpherston Sinkhole, Transport Method: Car
+Plan ID: 20250907, Destination: Coonawarra Wine Region, Transport Method: Car
+Plan ID: 20250921, Destination: Naracoorte Caves, Transport Method: Car
+Plan ID: 20251005, Destination: Hahndorf German Village, Transport Method: Car
+Plan ID: 20251019, Destination: Adelaide Central Market, Transport Method: Airplane
+```
+
+How to open and read the raw data in Python
+
+```python
+file = open("travel.txt", "r")
+
+big_string = file.read()
+print(big_string)
+
+lines = big_string.splitlines()
+for line in lines:
+    print(line)
+
+# OR
+lines = file.readlines()
+for line in lines:
+    print(line)
+
+
+file.close()
+``
+
 ### Step 1: Create a File
 
 - Use the given data to create a `travel.txt` file for your module
