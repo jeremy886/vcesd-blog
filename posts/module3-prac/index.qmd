@@ -20,33 +20,68 @@ draft: false
 
 ## Pair Programming Steps
 
-### Step 0: Set up working protocol
+### Step 0: Set Up Working Protocol
 
-- Who is the driver for how long
-- How to resolve conflicts
+- Decide who will be the driver and for how long
+- Agree on how to resolve any conflicts
 
-### Step 1: Create a file
+### Step 1: Create a File
 
-- Use given data and create a travel.txt file for your module
-- Use file operations (open, read/write, close) to load the data into Python
-- Create the function `show_loaded_data()` to display the loaded data
+- Use the given data to create a `travel.txt` file for your module
+- Use file operations (`open`, read/write, `close`) to load the data into Python
+- Create a function called `show_loaded_data()` to display the loaded data
 
-### Step 2: Place the travel data into a 2D data structure
+### Step 2: Store the Travel Data in a 2D Data Structure
 
-- Consider 4 data structure options (list of list, list of dictionary, dictionary of dictionary, dictionary of list) and decide
-- Process a row into 3 items and place them in the data structure
-- Use a loop to display the data in the following order "Desination", "Transport Methods", "ID"
-- Add a separator like "-" between items: `Werribee Open Range Zoo - Car - 20250105`
-- Create the function `show_data()` to display the items of data
-- Use a parameter `separator` to accept different separators from users
-
-
-### Step 3: Sort and Search
+- Consider four data structure options (`list of lists`, `list of dictionaries`, `dictionary of dictionaries`, `dictionary of lists`) and choose one
+- Process each row into three items and insert them into the chosen data structure
+- Use a loop to display the data in the following order: "Destination", "Transport Method", "ID"
+- Add a separator such as a dash between items: `Werribee Open Range Zoo - Car - 20250105`
+- Create a function called `show_data()` to display the data
+- Use a parameter called `separator` to allow users to customise the separator
+- Write a doctest to verify that the data type is correct
 
 
+```python
+def show_data(data, separator=' - '):
+    """
+    Display each item in the travel data with the given separator.
 
-### Step N: Test
+    >>> sample_data = [
+    ...     ['Werribee Open Range Zoo', 'Car', '20250105'],
+    ...     ['Melbourne Museum', 'Train', '20250106']
+    ... ]
+    >>> show_data(sample_data, separator=' - ')
+    Werribee Open Range Zoo - Car - 20250105
+    Melbourne Museum - Train - 20250106
+    """
+    for row in data:
+        print(separator.join(row))
 
-- use `assert` to test your module
-- use `doctest` to test your module
-- use custom functions to test your module
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+```
+
+
+### Step 3: Sorting Algorithm
+
+- Choose one sorting algorithm to implement: either Selection Sort or Quick Sort
+- Choose one field (e.g. Destination, Transport Method, or ID) to sort the data by
+- Create a sorting function with parameters like: `bubble_sort_by_field(data, field)`
+
+**Note:** To ensure you meet the test requirements, copy both the Selection Sort and Quick Sort Python code into your folder.
+
+
+### Step 4: Test the Sorting Algorithm
+
+- Load and process the data file into the data structure `data2d`
+- Write a custom test function: `test_data2d_row_length()`
+- Write a second test function: `test_data2d_item_number()`
+- Propose a third test function:
+
+### Step 5: Search Algorithm
+
+- Choose one search algorithm to implement: either Linear Search or Binary Search
+- Choose one field to search within the data
+- Create a search function with parameters like: `xxx_search_by_field(data, field)`
