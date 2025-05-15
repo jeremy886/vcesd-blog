@@ -1,10 +1,9 @@
 ---
 title: "Module 3 Practice Task"
 description: "A text-based Module 3 task"
-author: "Your Name"
+author: "Jeremy Chen"
 date: 2025-05-15
-categories: [module3, programming]
-draft: false
+categories: [module3, code]
 ---
 
 # Module 3
@@ -132,3 +131,15 @@ if __name__ == "__main__":
 - Choose one search algorithm to implement: either Linear Search or Binary Search
 - Choose one field to search within the data
 - Create a search function with parameters like: `xxx_search_by_field(data, field)`
+
+
+### Testing recap
+
+Methods for automatic testing:
+
+1. `assert`
+
+```{python}
+user_input = 25
+assert user_input == 25, "Please input 25"
+```
