@@ -248,23 +248,6 @@ Plan ID: 20251019, Destination: Adelaide Central Market, Transport Method: Airpl
 <li>Use file operations (<code>open</code>, read/write, <code>close</code>) to load the data into Python</li>
 <li>Create a function called <code>show_loaded_data()</code> to display the loaded data</li>
 </ul>
-<p>How to open and read the raw data in Python</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"travel.txt"</span>, <span class="st">"r"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>big_string <span class="op">=</span> <span class="bu">file</span>.read()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(big_string)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> big_string.splitlines()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> lines:</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># OR</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> <span class="bu">file</span>.readlines()</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> lines:</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="step-2-store-the-travel-data-in-a-2d-data-structure" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-store-the-travel-data-in-a-2d-data-structure">Step 2: Store the Travel Data in a 2D Data Structure</h3>
@@ -275,26 +258,7 @@ Plan ID: 20251019, Destination: Adelaide Central Market, Transport Method: Airpl
 <li>Add a separator such as a dash between items: <code>Werribee Open Range Zoo - Car - 20250105</code></li>
 <li>Create a function called <code>show_data()</code> to display the data</li>
 <li>Use a parameter called <code>separator</code> to allow users to customise the separator</li>
-<li>Write a doctest to verify that the data type is correct</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_data(data, separator<span class="op">=</span><span class="st">' - '</span>):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Display each item in the travel data with the given separator.</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; sample_data = [</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ...     ['Werribee Open Range Zoo', 'Car', '20250105'],</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ...     ['Melbourne Museum', 'Train', '20250106']</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    ... ]</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; show_data(sample_data, separator=' - ')</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Werribee Open Range Zoo - Car - 20250105</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Melbourne Museum - Train - 20250106</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> data:</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(separator.join(row))</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> doctest</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    doctest.testmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="step-3-sorting-algorithm" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-sorting-algorithm">Step 3: Sorting Algorithm</h3>
@@ -305,33 +269,25 @@ Plan ID: 20251019, Destination: Adelaide Central Market, Transport Method: Airpl
 </ul>
 <p><strong>Note:</strong> To ensure you meet the test requirements, copy both the Selection Sort and Quick Sort Python code into your folder.</p>
 </section>
-<section id="step-4-test-the-sorting-algorithm" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-test-the-sorting-algorithm">Step 4: Test the Sorting Algorithm</h3>
-<ul>
-<li>Load and process the data file into the data structure <code>data2d</code></li>
-<li>Write a custom test function: <code>test_data2d_row_length()</code></li>
-<li>Write a second test function: <code>test_data2d_item_number()</code></li>
-<li>Propose a third test function:</li>
-</ul>
-</section>
-<section id="step-5-search-algorithm" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-search-algorithm">Step 5: Search Algorithm</h3>
+<section id="step-4-search-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-search-algorithm">Step 4: Search Algorithm</h3>
 <ul>
 <li>Choose one search algorithm to implement: either Linear Search or Binary Search</li>
 <li>Choose one field to search within the data</li>
 <li>Create a search function with parameters like: <code>xxx_search_by_field(data, field)</code></li>
 </ul>
 </section>
-<section id="testing-recap" class="level3">
-<h3 class="anchored" data-anchor-id="testing-recap">Testing recap</h3>
+<section id="step-5-test-the-sorting-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-test-the-sorting-algorithm">Step 5: Test the Sorting Algorithm</h3>
+<ul>
+<li>Use assert to validate data</li>
+</ul>
 <p>Methods for automatic testing:</p>
 <ol type="1">
 <li><code>assert</code></li>
 </ol>
-<div id="fc526366" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>user_input <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> user_input <span class="op">==</span> <span class="dv">25</span>, <span class="st">"Please input 25"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>user_input <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> user_input <span class="op">==</span> <span class="dv">25</span>, <span class="st">"Please input 25"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
