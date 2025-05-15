@@ -50,6 +50,13 @@ Plan ID: 20251005, Destination: Hahndorf German Village, Transport Method: Car
 Plan ID: 20251019, Destination: Adelaide Central Market, Transport Method: Airplane
 ```
 
+
+### Step 1: Create a File
+
+- Use the given data to create a `travel.txt` file for your module
+- Use file operations (`open`, read/write, `close`) to load the data into Python
+- Create a function called `show_loaded_data()` to display the loaded data
+
 How to open and read the raw data in Python
 
 ```python
@@ -69,13 +76,7 @@ for line in lines:
 
 
 file.close()
-``
-
-### Step 1: Create a File
-
-- Use the given data to create a `travel.txt` file for your module
-- Use file operations (`open`, read/write, `close`) to load the data into Python
-- Create a function called `show_loaded_data()` to display the loaded data
+```
 
 ### Step 2: Store the Travel Data in a 2D Data Structure
 
